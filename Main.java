@@ -1,11 +1,21 @@
+import java.util.*;
+import java.io.*;
+
 public class Main{
   
   public static void main(String[] args){
-    
-  System.out.println("Fact 5:" + fact(5));
-     
-    
-    
+    Scanner sc = new Scanner (System.in);
+    System.out.println("Enter a number to factorial:");
+    int n = sc.nextInt();
+    System.out.println("Factorial of " + n +" is: "  + fact(n));
+    System.out.println("Enter a world that you want to check as a palindrome:");
+    String str = sc.next();
+    if((isPalindrome(str)) == true){
+    System.out.println(str + " is a palindrome!");
+    }else {
+        System.out.println(str + " is not a paindrome :(");
+    }
+  
   }
   
   
@@ -23,13 +33,14 @@ public class Main{
     
     //If both are true, it will return
     //                  Here and on is its own eval
-   return str.charAt(0) == str.charAt(str.lenth()-1) && isPalindrome(1, str.length()-1));
+   return (str.charAt(0)  == str.charAt(str.length()-1)) && isPalindrome(str.substring(1, str.length()- 1));
   }
   
   //n is the lenght of the array
   public static int max(int[] arr, int n) {
     //Base
-    if(n ==0 throw new Exception());
+    // if(n == 0) throw new Exception("ERROR");
+    
     if( n == 1) return arr[0]; 
     max(arr, arr.length);
     //in an array with n = 5, to calc maxRest we 
